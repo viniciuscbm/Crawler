@@ -20,6 +20,11 @@ services:
     volumes:
       - gems:/gems
       - .:/crawler
+
+  swaggereditor:
+    image: swaggerapi/swagger-editor
+    ports:
+      - "8080:8080"
  
 volumes:
   gems:
