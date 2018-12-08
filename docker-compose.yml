@@ -1,0 +1,27 @@
+version: "3"
+ 
+services:
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  app:
+    depends_on:
+      - db
+    build: .
+    command: bash start.sh
+    links:
+      - db
+    ports:
+      - "3000:3000"
+    volumes:
+      - gems:/gems
+      - .:/crawler
+ 
+volumes:
+  gems:
+  crawler:
+  mongo-data:
