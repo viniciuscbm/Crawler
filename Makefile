@@ -6,7 +6,6 @@ env := development
 setup:
 	docker-compose build
 	make bundle
-	make reset
  
 bundle:
 	$(RUN) bundle install
@@ -32,6 +31,14 @@ rspec:
  
 run:
 	$(RUN) bundle exec $(c)
+
+update:
+	make fasterer
+	make rubycritic
+	make rubocop
+	make brakeman
+	make audit
+	make best-practices
 
 fasterer:
 	$(RUN) bundle exec fasterer

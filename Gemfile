@@ -27,7 +27,7 @@ gem "rack-cors"
 # Rack middleware for blocking & throttling abusive requests
 gem "rack-attack"
 # Ruby ODM framework for MongoDB
-gem "mongoid", "~> 6.1.0"
+gem "mongoid"
 # Gem to allow for custom representations of JSON responses
 gem "active_model_serializers"
 # To make http requests
@@ -38,6 +38,12 @@ gem "nokogiri"
 gem "kaminari"
 # For generate better Swagger Doc
 gem "swagger-parser"
+# Flexible authentication solution for Rails with Warden.
+gem "devise"
+# Token based authentication for Rails JSON APIs. Designed to work with jToker and ng-token-auth.
+gem "devise_token_auth", git: "https://github.com/lynndylanhurley/devise_token_auth.git"
+# Document-level locking for MongoDB via Mongoid
+gem "mongoid-locker"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
