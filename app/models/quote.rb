@@ -8,5 +8,6 @@ class Quote
   field :author_about, type: String
   field :tags,         type: Array
 
-  validates :quote, :author, :author_about, :tags, presence: true
+	validates :quote, :author, :author_about, :tags, presence: true
+	validates :author_about, uniqueness: true
 end
