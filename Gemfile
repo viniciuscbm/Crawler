@@ -29,13 +29,11 @@ gem "rack-attack"
 # Ruby ODM framework for MongoDB
 gem "mongoid"
 # Gem to allow for custom representations of JSON responses
-gem "active_model_serializers", require: true
+gem "active_model_serializers"
 # To make http requests
 gem "rest-client"
 # Nokogiri is a Rubygem providing HTML, XML, SAX, and Reader parsers with XPath and CSS selector support.
 gem "nokogiri"
-# Sophisticated paginator for Ruby
-gem "kaminari"
 # For generate better Swagger Doc
 gem "swagger-parser"
 # Flexible authentication solution for Rails with Warden.
