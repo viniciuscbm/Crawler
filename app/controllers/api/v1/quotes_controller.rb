@@ -2,16 +2,9 @@
 
 module Api::V1
   class QuotesController < ApiController
-    before_action :set_quotes
-
     def index
-      render json: @quotes
+      tag = params[:tags].downcase
+      render json: Tag.where(name: tag).exists? ? Quote.where(:tags.in => [tag]) : CrawlerService.new(tag).perform
     end
-
-    private
-
-      def set_quotes
-        @quotes = Quote.where(:tags.in => [params[:tags]])
-      end
   end
 end
