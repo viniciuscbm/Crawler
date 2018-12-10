@@ -44,7 +44,6 @@ gem "devise"
 gem "devise_token_auth", git: "https://github.com/lynndylanhurley/devise_token_auth.git"
 # Document-level locking for MongoDB via Mongoid
 gem "mongoid-locker"
-gem "bson_ext"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

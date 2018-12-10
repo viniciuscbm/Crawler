@@ -9,4 +9,5 @@ class Quote
   field :tags,         type: Array
 
   validates :quote, :author, :author_about, :tags, presence: true
+  validates :quote, uniqueness: true
 end
