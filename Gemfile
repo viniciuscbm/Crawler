@@ -27,9 +27,9 @@ gem "rack-cors"
 # Rack middleware for blocking & throttling abusive requests
 gem "rack-attack"
 # Ruby ODM framework for MongoDB
-gem "mongoid", "~> 6"
+gem "mongoid"
 # Gem to allow for custom representations of JSON responses
-gem "active_model_serializers", "~> 0.8.0", require: true
+gem "active_model_serializers", require: true
 # To make http requests
 gem "rest-client"
 # Nokogiri is a Rubygem providing HTML, XML, SAX, and Reader parsers with XPath and CSS selector support.
