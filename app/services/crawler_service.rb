@@ -11,22 +11,22 @@ class CrawlerService
 
   def perform
     begin
-       doc = Nokogiri::HTML(RestClient.get(@url))
+      doc = Nokogiri::HTML(RestClient.get(@url))
 
-       quotes = doc.css(".quote").map do |q|
-         h = {
-           quote: q.css(".text").first.content,
-           author: q.css("span small.author").text,
-           author_about: q.css("span a").first["href"],
-           tags: q.css(".tags a").map { |tag| tag.text}
-         }
-       end
+      quotes = doc.css(".quote").map do |q|
+        h = {
+          quote: q.css(".text").first.content,
+          author: q.css("span small.author").text,
+          author_about: q.css("span a").first["href"],
+          tags: q.css(".tags a").map { |tag| tag.text}
+        }
+      end
 
-       Tag.create(name: @tag)
-       Quote.create(quotes)
+      Tag.create(name: @tag)
+      Quote.create(quotes)
 
-     rescue RestClient::ExceptionWithResponse => e
-       e.response
-     end
+    rescue RestClient::ExceptionWithResponse => e
+      e.response
+    end
   end
 end
