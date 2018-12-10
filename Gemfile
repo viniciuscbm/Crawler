@@ -48,12 +48,6 @@ group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
   # Ruby library that pretty prints Ruby objects in full color exposing
   gem "awesome_print"
-  # Fasterer will suggest some speed improvements
-  gem "fasterer"
-  # RubyCritic is a gem that wraps around static analysis
-  gem "rubycritic", require: false
-  # Ruby static code analyzer, based on the community Ruby style guide
-  gem "rubocop", require: false
 end
 
 group :development do
@@ -67,8 +61,30 @@ group :development do
   gem "bundler-audit", require: false
   # a code metric tool for rails projects http://rails-bestpractices.com
   gem "rails_best_practices", require: false
+  # Fasterer will suggest some speed improvements
+  gem "fasterer", require: false
+  # RubyCritic is a gem that wraps around static analysis
+  gem "rubycritic", require: false
+  # Ruby static code analyzer, based on the community Ruby style guide
+  gem "rubocop", require: false
 end
 
+group :test do
+  # Testing framework for Rails
+  gem "rspec-rails"
+  # Library for stubbing and setting expectations on HTTP requests in Ruby
+  gem "webmock"
+  # Use for codeclimate test coverage
+  gem "simplecov", require: false
+  # Ruby SimpleCov Cobertura Formatter
+  gem "simplecov-cobertura", require: false
+  # Collection of testing matchers
+  gem "shoulda-matchers"
+  # Use Factory Bot to create objects dynamically
+  gem "factory_bot_rails"
+  # Use Faker to generate data dynamically
+  gem "faker"
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
