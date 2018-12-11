@@ -109,6 +109,34 @@ Resultado:
 ```
 Nesse momento o resultado foi gravado no banco de dados e na próxima consulta os dados serão recuperados do banco.
 
+Caso precise se autenticar, com usuário já criado faça um request para a URL abaixo:
+```
+POST
+
+localhost:3000/api/v1/auth/sign_in
+
+Body:
+{
+	"email": "test@test.com",
+	"password": 12345678
+}
+
+Resulado:
+
+{
+    "data": {
+        "allow_password_change": false,
+        "email": "test@test.com",
+        "locker_locked_at": null,
+        "locker_locked_until": null,
+        "provider": "email",
+        "reset_password_redirect_url": null,
+        "uid": "test@test.com",
+        "id": "5c102e0072c9ae000c7150ba"
+    }
+}
+```
+
 ###### Observação:
 O Devise Auth Token está configurado para mudar de token a cada requisição, para tanto, o access-token precisa ser alterado a cada requisição, onde o novo token é gerado a cada request, sendo necessário pegar nos heards e adicionar na nova request.
 
