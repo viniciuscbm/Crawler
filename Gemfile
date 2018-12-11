@@ -79,7 +79,7 @@ group :test do
   # Ruby SimpleCov Cobertura Formatter
   gem "simplecov-cobertura", require: false
   # RSpec matchers and macros for Mongoid.
-  gem 'mongoid-rspec'
+  gem "mongoid-rspec"
   # Use Factory Bot to create objects dynamically
   gem "factory_bot_rails"
   # Use Faker to generate data dynamically

@@ -1,4 +1,6 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe User, type: :model do
 
@@ -21,7 +23,7 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_field(:last_sign_in_at).of_type(Time) }
     it { is_expected.to have_field(:current_sign_in_ip).of_type(String) }
     it { is_expected.to have_field(:last_sign_in_ip).of_type(String) }
-    it { is_expected.to have_field(:confirmation_token).of_type(String  ) }
+    it { is_expected.to have_field(:confirmation_token).of_type(String) }
     it { is_expected.to have_field(:confirmed_at).of_type(Time) }
     it { is_expected.to have_field(:confirmation_sent_at).of_type(Time) }
     it { is_expected.to have_field(:unconfirmed_email).of_type(String) }
