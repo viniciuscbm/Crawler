@@ -23,7 +23,10 @@ Para testar vai ser necessário utilizar algum software para fazer as requests. 
 Já com o Postman instalado, tente fazer uma request para endpoint abaixo para verificar a necessidade de se autenticar.
 
 ```
-GET localhost:3000/api/v1/quotes?tags=life
+GET
+
+localhost:3000/api/v1/quotes?tags=life
+
 Resultado:
 {
     "errors": [
@@ -35,12 +38,16 @@ Resultado:
 Para ser autenticar no sistema vai ser necessário criar um novo usuário, para tanto, siga os passos abaixo:
 
 ```
-POST localhost:3000/api/v1/auth
+POST
+
+localhost:3000/api/v1/auth
+
 Body:
 {
 	"email": "test@test.com",
 	"password": 12345678
 }
+
 Resultado:
 {
     "status": "success",
@@ -68,7 +75,10 @@ Acessando os headers vai ser possível visualizar informações como:
 ```
 Copie os metas dados gerado por você e adicione aos headers da request da próxima request:
 ```
-GET localhost:3000/api/v1/quotes?tags=life
+GET
+
+localhost:3000/api/v1/quotes?tags=life
+
 Resultado:
 {
     "quotes": [
